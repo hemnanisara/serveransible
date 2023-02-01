@@ -1,0 +1,10 @@
+- name: variable value
+  hosts: all
+  vars:
+    url: www.globalvariable.com
+  vars_files: 
+    - filevar.yaml
+  tasks:
+    - name: task2
+      debug: 
+        msg: "the value of variable {{url}}"
