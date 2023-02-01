@@ -1,0 +1,16 @@
+- name: Registering vars
+  hosts: all
+  vars: 
+    url: www.global.com
+   
+  tasks:
+    - name: task1
+      debug:
+        msg: "value of variable is {{url}}" 
+      vars: 
+        url: www.local.com
+
+
+    - name: task2
+      debug:
+        msg: "the value variablke is {{url}}"
