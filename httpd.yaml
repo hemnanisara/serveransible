@@ -4,10 +4,8 @@
   tasks:
     - name: install packages
       ansible.builtin.package:
-        name: 
-          - httpd
-          - nginx
+        name: httpd
         state: present
 
     - name: downloading template
-       shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
