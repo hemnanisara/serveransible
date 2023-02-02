@@ -1,8 +1,11 @@
-- name: httpd is there
+- name: package installation on hosts
   hosts: all
+  become: yes
   tasks:
-    - name: ensure httpd is installed
-       yum:
-        name: httpd
+    - name: install packages
+      ansible.builtin.packages:
+        name: 
+          - httpd
+          - nginx
         state: present
    
