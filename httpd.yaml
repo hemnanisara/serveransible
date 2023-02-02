@@ -6,7 +6,7 @@ tasks:
        name: httpd
        state: present
    -name: start apache service
-      sevice:
+      service:
         name: httpd
         start: started
    -name: add firewall rules
