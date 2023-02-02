@@ -13,7 +13,7 @@
       
     - name: extracting template in same directory
       unarchive: 
-        src: /home/ec2-usere/cycle.zip
+        src: /home/ec2-user/cycle.zip
         dest: /home/ec2-user
         remote_src: yes
 
