@@ -25,3 +25,9 @@
     
     - name: moving extracted template files to root directory of apache 
       shell: cp -r /home/ec2-user/html/* /var/www/html
+      
+    - name: starting httpd
+      shell: systemctl start httpd
+             
+
+      
