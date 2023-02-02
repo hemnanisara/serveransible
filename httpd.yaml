@@ -8,4 +8,20 @@
         state: present
 
     - name: downloading template
-      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip 
+      
+      
+    - name: extracting template in same directory
+      unarchive: 
+        src: /home/ec2-usere/cycle.zip
+        dest: /home/ec2-user
+        remote_src: yes
+
+    
+    - name: Removing existing index.html file from root directory of apache
+      file:
+        path: /var/www/html/index.html
+        state: absent
+    
+    - name: moving extracted template files to root directory of apache 
+      shell: cp -r /home/ec2-user/html/* /var/www/html
