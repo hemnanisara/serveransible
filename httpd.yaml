@@ -1,8 +1,8 @@
--name: httpd is there
-hosts: all
-tasks:
-  -name: ensure httpd is installed
-    yum:
-     name: httpd
-     state: latest
+- name: httpd is there
+  hosts: all
+  tasks:
+    -name: ensure httpd is installed
+      yum:
+       name: httpd
+       state: latest
    
