@@ -21,7 +21,8 @@ tasks:
     -name: cpoy index file to apache directory
          copy:
          src: /tem/index.html
-         des: /var/www/html
+         des: /root/reeta/serveransible
+         
     -name: restart apache service
         service:
         name: httpd
