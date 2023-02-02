@@ -1,0 +1,28 @@
+-name: congiuring apache web server
+hosts: all
+tasks:
+   -name: install apache packages
+     yum:
+       name: httpd
+       state: present
+   -name: start apache service
+    sevice:
+        name: httpd
+        start: started
+   -name: add firewall rules
+     firewalld:
+         port: 80/tcp
+         permanent: true
+         state :enabled
+   -name: reload firewall congiuring for the new rules
+      systemd:
+        name: firewalld
+        state: reloaded
+    -name: cpoy index file to apache directory
+         copy:
+         src: /tem/index.html
+         des: /var/www/html
+    -name: restart apache service
+        service:
+        name: httpd
+        start: restarted         
